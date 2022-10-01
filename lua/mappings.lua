@@ -17,23 +17,36 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Normal --
--- Better window navigation
+-- Better window/buffer navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
+keymap("n", "<C-n>", ":bnext <CR>", opts)
+keymap("n", "<C-p>", ":bprev <CR>", opts)
+keymap("n", "<leader>1", ":BufferLineGoToBuffer 1 <CR>", opts)
+keymap("n", "<leader>2", ":BufferLineGoToBuffer 2 <CR>", opts)
+keymap("n", "<leader>3", ":BufferLineGoToBuffer 3 <CR>", opts)
+keymap("n", "<leader>4", ":BufferLineGoToBuffer 4 <CR>", opts)
+keymap("n", "<leader>5", ":BufferLineGoToBuffer 5 <CR>", opts)
+keymap("n", "<leader>6", ":BufferLineGoToBuffer 6 <CR>", opts)
+keymap("n", "<leader>7", ":BufferLineGoToBuffer 7 <CR>", opts)
+keymap("n", "<leader>8", ":BufferLineGoToBuffer 8 <CR>", opts)
+keymap("n", "<leader>9", ":BufferLineGoToBuffer 9 <CR>", opts)
+keymap("n", "<leader>bp", ":BufferLinePick <CR>", opts)
+
 
 -- Move single line around
 keymap("n", "<A-j>", ":m .+1<CR>", opts)
 keymap("n", "<A-k>", ":m .-2<CR>", opts)
 
 -- Telescope
-keymap("n", "<leader>fb", ":Telescope file_browser <CR>", opts)
 keymap("n", "<leader>ff", ":Telescope find_files <CR>", opts)
 keymap("n", "<leader>fif", ":Telescope current_buffer_fuzzy_find <CR>", opts)
+keymap("n", "<leader>fb", ":Telescope buffers <CR>", opts)
 
--- Neotree
-keymap("n", "<leader>e", ":NeoTreeFocusToggle <CR>", opts)
+-- Nvim-Tree
+keymap("n", "<leader>e", ":NvimTreeToggle <CR>", opts)
 
 -- Git
 keymap("n", "<leader>gb", ":GitBlameToggle <CR>", opts)
@@ -41,7 +54,11 @@ keymap("n", "<leader>gb", ":GitBlameToggle <CR>", opts)
 -- Reindent entire file but keep cursor where it was
 keymap("n", "<leader>i", "gg=G''", opts)
 
--- Insert --
--- Press jk fast to enter
+-- Press jk fast to go to Normal mode
 keymap("i", "jk", "<ESC>", opts)
+
+-- Reload config
+keymap("n", "<leader>sv" , ":source $MYVIMRC <CR>", opts)
+keymap("n", "<leader>scf" , ":source % <CR>| :echo \"sourced file\" <CR>", opts)
+keymap("n", "<leader><leader>x" , ":source % <CR>| :echo \"sourced file\" <CR>", opts)
 

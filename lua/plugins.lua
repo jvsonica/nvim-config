@@ -38,6 +38,11 @@ packer.init({
 packer.startup(function(use)
     use("wbthomason/packer.nvim")
     use({ "windwp/nvim-autopairs", config = get_config("nvim-autopairs") })
+    use({
+        'kyazdani42/nvim-tree.lua',
+        requires = { 'kyazdani42/nvim-web-devicons' },
+        config = get_config("nvim-tree")
+    })
     use({ "rcarriga/nvim-notify" })
     use({ "f-person/git-blame.nvim", config = get_config("git-blame") })
 
@@ -54,7 +59,7 @@ packer.startup(function(use)
     use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
     use({ "nvim-telescope/telescope-packer.nvim" })
     use({ "nvim-telescope/telescope-ui-select.nvim" })
-    
+
     use({
         "nvim-treesitter/nvim-treesitter",
         config = get_config("treesitter"),
@@ -65,16 +70,16 @@ packer.startup(function(use)
     })
     use({ "ellisonleao/gruvbox.nvim" })
     use({
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v2.x",
-        requires = { 
-            "nvim-lua/plenary.nvim",
-            "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
-            "MunifTanjim/nui.nvim",
-        },
-        config = get_config("neotree")
+        "nvim-lualine/lualine.nvim",
+        requires = { "kyazdani42/nvim-web-devicons" },
+        config = get_config("lualine")
     })
-    use({ "numToStr/Navigator.nvim", config = get_config("navigator") })
-    -- use({ "kyazdani42/nvim-tree.lua", config = get_config("nvim-tree") })
+    use({
+        "akinsho/bufferline.nvim",
+        tag = "v2.*",
+        requires = { "kyazdani42/nvim-web-devicons" },
+        config = get_config("bufferline")
+    })
+     use({ "folke/which-key.nvim" })
 end)
 
