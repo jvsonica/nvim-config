@@ -44,7 +44,6 @@ packer.startup(function(use)
         config = get_config("nvim-tree")
     })
     use({ "rcarriga/nvim-notify" })
-    use({ "f-person/git-blame.nvim", config = get_config("git-blame") })
 
     -- Telescope
     use({
@@ -64,11 +63,34 @@ packer.startup(function(use)
         "nvim-treesitter/nvim-treesitter",
         config = get_config("treesitter"),
     })
+
+    use({
+        "hrsh7th/nvim-cmp",
+        requires = {
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-cmdline",
+            "hrsh7th/cmp-calc",
+            "lukas-reineke/cmp-rg",
+            "hrsh7th/cmp-nvim-lsp-signature-help",
+        },
+        config = get_config("cmp")
+    })
+
+    -- LSP
     use({
         "neovim/nvim-lspconfig",
         config = get_config("lsp")
     })
-    use({ "ellisonleao/gruvbox.nvim" })
+    use({
+        "williamboman/mason.nvim",
+        requires = { "williamboman/mason-lspconfig.nvim", "WhoIsSethDaniel/mason-tool-installer.nvim" },
+        config = get_config("lsp.mason")
+    })
+
+    -- Color Scheme and Visuals
+    use({ "ellisonleao/gruvbox.nvim", config = get_config("gruvbox") })
     use({
         "nvim-lualine/lualine.nvim",
         requires = { "kyazdani42/nvim-web-devicons" },
@@ -80,6 +102,7 @@ packer.startup(function(use)
         requires = { "kyazdani42/nvim-web-devicons" },
         config = get_config("bufferline")
     })
-     use({ "folke/which-key.nvim" })
+    use({ "lewis6991/gitsigns.nvim", config = get_config("gitsigns") })
+    use({ "folke/which-key.nvim" })
 end)
 

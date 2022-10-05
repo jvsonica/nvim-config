@@ -34,7 +34,7 @@ keymap("n", "<leader>7", ":BufferLineGoToBuffer 7 <CR>", opts)
 keymap("n", "<leader>8", ":BufferLineGoToBuffer 8 <CR>", opts)
 keymap("n", "<leader>9", ":BufferLineGoToBuffer 9 <CR>", opts)
 keymap("n", "<leader>bp", ":BufferLinePick <CR>", opts)
-
+keymap("n", "<leader>bd", ":bd <CR>", opts)
 
 -- Move single line around
 keymap("n", "<A-j>", ":m .+1<CR>", opts)
@@ -49,7 +49,8 @@ keymap("n", "<leader>fb", ":Telescope buffers <CR>", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle <CR>", opts)
 
 -- Git
-keymap("n", "<leader>gb", ":GitBlameToggle <CR>", opts)
+keymap("n", "<leader>gb", ":Gitsigns toggle_current_line_blame  <CR>", opts)
+keymap("n", "<leader>gd", ":Gitsigns diffthis  <CR>", opts)
 
 -- Reindent entire file but keep cursor where it was
 keymap("n", "<leader>i", "gg=G''", opts)

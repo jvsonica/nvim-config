@@ -14,9 +14,10 @@ o.shiftwidth = 4
 o.smartindent = true
 o.incsearch = true
 o.scrolloff = 8
-o.signcolumn = "yes"
+o.signcolumn = "yes:1"
 o.hlsearch = false
-
+o.conceallevel = 0
 o.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme gruvbox]])
+
+vim.cmd("colorscheme gruvbox")
 
