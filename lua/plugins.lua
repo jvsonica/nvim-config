@@ -75,14 +75,15 @@ packer.startup(function(use)
             "lukas-reineke/cmp-rg",
             "hrsh7th/cmp-nvim-lsp-signature-help",
         },
-        config = get_config("cmp")
+        config = get_config("cmp"),
     })
 
     -- LSP
     use({
         "neovim/nvim-lspconfig",
-        config = get_config("lsp")
+        config = get_config("lsp.lsp")
     })
+    use({ "onsails/lspkind-nvim" })
     use({
         "williamboman/mason.nvim",
         requires = { "williamboman/mason-lspconfig.nvim", "WhoIsSethDaniel/mason-tool-installer.nvim" },

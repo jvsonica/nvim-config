@@ -1,9 +1,23 @@
 -- Setup nvim-cmp.
 local cmp = require("cmp")
--- local lspkind = require("lspkind")
+local lspkind = require("lspkind")
 
 cmp.setup({
-    formatting = {},
+    formatting = {
+        format = lspkind.cmp_format({
+            with_text = false,
+            maxwidth = 50,
+            mode = "symbol",
+            menu = {
+                buffer = "BUF",
+                rg = "RG",
+                nvim_lsp = "LSP",
+                path = "PATH",
+                luasnip = "SNIP",
+                calc = "CALC",
+            },
+        }),
+    },
     snippet = {},
     mapping = {
         ["<C-d>"] = cmp.mapping.scroll_docs(-4), -- TODO: what is this
@@ -31,10 +45,10 @@ cmp.setup({
         { name = "nvim_lsp" },
         { name = "nvim_lsp_signature_help" },
         { name = "buffer", keyword_length = 5 },
-        { name = "luasnip" }, -- TODO: what is this
-        { name = "calc" }, -- TODO: what is this
-        { name = "path" }, -- TODO: what is this
-        { name = "rg", keyword_length = 5 }, -- TODO: what is this
+        { name = "luasnip" }, -- snippets
+        { name = "calc" }, -- quick maths with cmp
+        { name = "path" },
+        { name = "rg", keyword_length = 5 }
     },
 })
 
