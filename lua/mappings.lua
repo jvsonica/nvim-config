@@ -47,6 +47,10 @@ keymap("n", "<leader>fb", ":Telescope buffers <CR>", opts)
 
 -- Nvim-Tree
 keymap("n", "<leader>e", ":NvimTreeToggle <CR>", opts)
+-- H to toggle hidden files
+-- E to expand entire file tree
+-- W to collapse entire file tree
+-- <C-k> to display file info
 
 -- Git
 keymap("n", "<leader>gb", ":Gitsigns toggle_current_line_blame  <CR>", opts)

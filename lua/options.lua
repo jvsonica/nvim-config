@@ -17,7 +17,7 @@ o.scrolloff = 8
 o.signcolumn = "yes:1"
 o.hlsearch = false
 o.conceallevel = 0
-o.background = "dark" -- or "light" for light mode
+o.background = "dark"
 
 vim.cmd("colorscheme gruvbox")
 
