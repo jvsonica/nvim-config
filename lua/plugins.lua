@@ -44,6 +44,7 @@ packer.startup(function(use)
         config = get_config("nvim-tree")
     })
     use({ "rcarriga/nvim-notify" })
+    use({ "karb94/neoscroll.nvim", config = get_config("neoscroll") })
 
     -- Telescope
     use({
@@ -104,6 +105,5 @@ packer.startup(function(use)
         config = get_config("bufferline")
     })
     use({ "lewis6991/gitsigns.nvim", config = get_config("gitsigns") })
-    use({ "folke/which-key.nvim" })
 end)
 
