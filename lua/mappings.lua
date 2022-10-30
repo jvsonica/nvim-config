@@ -34,7 +34,7 @@ keymap("n", "<leader>7", ":BufferLineGoToBuffer 7 <CR>", opts)
 keymap("n", "<leader>8", ":BufferLineGoToBuffer 8 <CR>", opts)
 keymap("n", "<leader>9", ":BufferLineGoToBuffer 9 <CR>", opts)
 keymap("n", "<leader>bp", ":BufferLinePick <CR>", opts)
-keymap("n", "<leader>bd", ":bd <CR>", opts)
+keymap("n", "<leader>q", ":bd <CR> | :bnext <CR>", opts)
 
 -- Move single line around
 keymap("n", "<A-j>", ":m .+1<CR>", opts)
