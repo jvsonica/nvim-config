@@ -92,7 +92,7 @@ packer.startup(function(use)
     })
 
     -- Color Scheme and Visuals
-    use({ "ellisonleao/gruvbox.nvim", config = get_config("gruvbox") })
+    use({ "ellisonleao/gruvbox.nvim", config = get_config("gruvbox"), commit= "cb7a8a867cfaa7f0e8ded57eb931da88635e7007"})
     use({
         "nvim-lualine/lualine.nvim",
         requires = { "kyazdani42/nvim-web-devicons" },

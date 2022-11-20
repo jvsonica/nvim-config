@@ -18,6 +18,7 @@ o.signcolumn = "yes:1"
 o.hlsearch = false
 o.conceallevel = 0
 o.background = "dark"
+o.textwidth = 120
 
 vim.cmd("colorscheme gruvbox")
 

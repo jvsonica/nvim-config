@@ -35,10 +35,13 @@ keymap("n", "<leader>8", ":BufferLineGoToBuffer 8 <CR>", opts)
 keymap("n", "<leader>9", ":BufferLineGoToBuffer 9 <CR>", opts)
 keymap("n", "<leader>bp", ":BufferLinePick <CR>", opts)
 keymap("n", "<leader>q", ":bd <CR> | :bnext <CR>", opts)
+keymap("n", "<leader>w", ":w <CR>", opts)
 
--- Move single line around
+-- Move lines around
 keymap("n", "<A-j>", ":m .+1<CR>", opts)
 keymap("n", "<A-k>", ":m .-2<CR>", opts)
+keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
+keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files <CR>", opts)
